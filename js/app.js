@@ -39,7 +39,7 @@ console.log({
 init()// the function call 
 
 //Function declarations
-function init(){
+function init() {
     console.log("Init working")
     resetBtnEl.classList.add("hidden")
     gameMessageEl.classList.add("hidden")
@@ -52,15 +52,14 @@ function init(){
 }
 
 
-function runGame(){  
-    //console.log("game running")
+function runGame() {  
+    console.log("game running")
     updateStates()
     checkGameOver()
     render()
 }
 
-
-function render(){
+function render() {
     console.log('content rendering')
     //display the state properties to the DOM
     boredomStatEl.textContent = state.boredom
@@ -71,7 +70,7 @@ function render(){
     if (gameOver) {
 
         //display the hidden elements
-        resetBtnEl.classList.remote('hidden')
+        resetBtnEl.classList.remove('hidden')
         gameMessageEl.classList.remove('hidden')
         //clear the timer
         clearInterval(timer)
@@ -95,7 +94,6 @@ function checkGameOver() {
         state.boredom >9 ||
         state.hunger >9 ||
         state.sleepiness >9
-
     ){
         gameOver = true
     }
@@ -118,15 +116,11 @@ function sleepBtnClick() {
 }
 
 //step7
-
-
-
-function randomInt(){
+function randomInt() {
     return Math.floor(Math.random() *4)
 }
 
 //step 5 -- 
-
 /*----------------------------- Event Listeners -----------------------------*/
 
 playBtnEl.addEventListener('click', playBtnClick)
