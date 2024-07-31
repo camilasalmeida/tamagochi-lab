@@ -41,6 +41,11 @@ init()// the function call
 //Function declarations
 function init(){
     console.log("Init working")
+    resetBtnEl.classList.add("hidden")
+    gameMessageEl.classList.add("hidden")
+    state.boredom = 0
+    state.hunger = 0
+    state.sleepiness = 0
     gameOver = false;
     timer = setInterval(runGame, 2000)
     render()
@@ -112,6 +117,10 @@ function sleepBtnClick() {
     render()
 }
 
+//step7
+
+
+
 function randomInt(){
     return Math.floor(Math.random() *4)
 }
@@ -123,3 +132,5 @@ function randomInt(){
 playBtnEl.addEventListener('click', playBtnClick)
 feedBtnEl.addEventListener('click', feedBtnClick)
 sleepBtnEl.addEventListener('click', sleepBtnClick)
+
+resetBtnEl.addEventListener('click', init)
