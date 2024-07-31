@@ -95,7 +95,22 @@ function checkGameOver() {
         gameOver = true
     }
 }
-    
+
+//step 6
+function playBtnClick() {
+    state.boredom = 0
+    render()
+}
+
+function feedBtnClick() {
+    state.hunger = 0
+    render()
+}
+
+function sleepBtnClick() {
+    state.sleepiness = 0
+    render()
+}
 
 function randomInt(){
     return Math.floor(Math.random() *4)
@@ -103,9 +118,8 @@ function randomInt(){
 
 //step 5 -- 
 
-
-
 /*----------------------------- Event Listeners -----------------------------*/
 
-
-
+playBtnEl.addEventListener('click', playBtnClick)
+feedBtnEl.addEventListener('click', feedBtnClick)
+sleepBtnEl.addEventListener('click', sleepBtnClick)
